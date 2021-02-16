@@ -19,7 +19,7 @@ var _userConnections = [];
 //app.get('/', (req, res) => {
 //    res.render('index')
 //})
-app.use(express.static(path.join(__dirname, '../clientapp')));
+app.use(express.static(path.join(__dirname, '')));
 //Listen on port 3000
 //Listen on port 3000
 

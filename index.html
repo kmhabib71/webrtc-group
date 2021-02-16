@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <meta name="viewport" content="width=device-width" />
@@ -7,23 +8,22 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
     <!-- <script src="scripts/jquery.signalR-2.2.2.min.js"></script> -->
     <!-- <script src="https://localhost:44338/signalr/hubs"></script> -->
-    <script src="scripts/wrtchelper.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="wrtchelper.js"></script>
+    <script src="app.js"></script>
 
     <script>
-        
-        $(function () {
-            
+        $(function() {
+
             const urlParams = new URLSearchParams(window.location.search);
-            
+
             var meeting_id = urlParams.get('mid');
 
             if (!meeting_id) {
-                var murl = window.location.origin + "?mid=" +  (new Date()).getTime();
-                $('#meetingid').attr('href',murl).text(murl);
+                var murl = window.location.origin + "?mid=" + (new Date()).getTime();
+                $('#meetingid').attr('href', murl).text(murl);
                 $("#meetingContainer").hide();
                 $("#meetingbox").show();
                 return;
@@ -41,16 +41,18 @@
             $("#meetingContainer").show();
             $("#meetingbox").hide();
 
-            MyApp._init(user_id,meeting_id);
+            MyApp._init(user_id, meeting_id);
 
         });
+
     </script>
 </head>
+
 <body>
 
     <div id="meetingbox" style="display: none;">
         <p>It seems you are not trying to join any meeting!
-            You may start a new meeting. Here is generated for you.  <a id='meetingid' href="#"></a>
+            You may start a new meeting. Here is generated for you. <a id='meetingid' href="#"></a>
         </p>
     </div>
 
@@ -76,7 +78,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div style="clear: both;"></div>
         <div class="toolbox" style="display:none">
             <button id="btnMuteUnmute">UnMute</button>
@@ -94,4 +96,5 @@
     </div>
 
 </body>
+
 </html>
