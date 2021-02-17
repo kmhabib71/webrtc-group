@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '')));
 //Listen on port 3000
 //Listen on port 3000
 
-server = app.listen(3000)
+server = app.listen(process.env.PORT || 5000)
 
 //socket.io instantiation
 const io = require("socket.io")(server)
