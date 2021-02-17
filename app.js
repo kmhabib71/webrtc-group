@@ -1,7 +1,7 @@
 var MyApp = (function(){
 
 var socket = null;
-var socker_url = 'http://localhost:3000';
+// var socker_url = 'http://localhost:3000';
 var meeting_id = '';
 var user_id = '';
 
@@ -24,7 +24,7 @@ function SignalServerEventBinding(){
     //_hub = $.connection.webRtcHub;
     //$.connection.hub.url = _hubUrl;
 
-    socket = io.connect(socker_url);
+    socket = io();
 
     var serverFn = function (data, to_connid) {
         socket.emit('exchangeSDP',{message:data,to_connid:to_connid});
